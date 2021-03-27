@@ -1,4 +1,3 @@
-@echo off
 set scenedir=.\scenes
 set targetdir=..\scenes
 set sourcedir=.\raw
