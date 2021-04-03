@@ -25,7 +25,7 @@ def word_count_calculator(scene_folder,stop_scene=0):
         total+=number
     return total
 
-wc=word_count_calculator('scenes')
+wc=word_count_calculator('scenes',stop=5)
 message='\nThe word count is: %d.'%wc
 print(message)
 
