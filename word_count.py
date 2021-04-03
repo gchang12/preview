@@ -19,12 +19,10 @@ def word_count_by_scene(scene_folder):
 def word_count_calculator(scene_folder,stop_scene=0):
     count=word_count_by_scene(scene_folder)
     total=0
-    current_scene=1
-    for number in count.values():
-        if current_scene == stop_scene:
+    for scene_num,number in enumerate(count.values(),start=1):
+        if scene_num == stop_scene:
             break
         total+=number
-        current_scene+=1
     return total
 
 wc=word_count_calculator('scenes')
