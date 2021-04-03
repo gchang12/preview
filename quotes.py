@@ -3,7 +3,7 @@ from os import walk
 def replace_quote(line):
     k=0
     new_line=''
-    for word in line:
+    for n,word in enumerate(line):
         if word == '\"':
             if k % 2 == 0:
                 word='``'
@@ -17,6 +17,10 @@ def replace_squote(line):
     for word in line:
         if word[0] == '\'' and word[-1] == '\'':
             word='`'+word[1:-1]+'\''
+        if len(word) > 2:
+            triquotes=tuple(word[:3])
+            if triquotes == ('`','`','\''):
+                word='`` `'+word[3:]
         new_line.append(word)
     return ' '.join(new_line)
 
