@@ -1,5 +1,4 @@
-from os import walk
-from os.path import sep
+from os import walk, sep
 
 def word_count_by_scene(scene_folder):
     count={}
