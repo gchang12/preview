@@ -1,4 +1,4 @@
-from os import walk
+from os import walk, sep
 
 def replace_quote(line):
     k=0
