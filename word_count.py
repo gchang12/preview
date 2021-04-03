@@ -16,7 +16,7 @@ def word_count_by_scene(scene_folder):
                     count[filename]+=len(line)
     return count
 
-def word_count_calculator(scene_folder,stop_scene=5):
+def word_count_calculator(scene_folder,stop_scene=0):
     count=word_count_by_scene(scene_folder)
     total=0
     current_scene=1
