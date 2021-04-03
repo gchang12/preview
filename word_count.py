@@ -26,7 +26,8 @@ def word_count_calculator(scene_folder,stop_scene=0):
     return total
 
 wc=word_count_calculator('scenes')
-exit(code=wc)
+message='\nThe word count is: %d.'%wc
+print(message)
 
 if __name__ == '__main__':
     pass
