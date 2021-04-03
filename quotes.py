@@ -1,4 +1,4 @@
-from os import walk, sep
+from os import walk
 
 def replace_quote(line):
     k=0
@@ -8,8 +8,6 @@ def replace_quote(line):
             if k % 2 == 0:
                 word='``'
             k+=1
-        elif word == '``':
-            k=0
         new_line+=word
     return new_line
 
@@ -35,12 +33,12 @@ def fix_file_quote(file):
             wfile.write(line)
 
 def fix_prose():
-    story_folder=sep.join(['.','scenes'])
+    story_folder='C:\\Users\\Eclair\\Documents\\projects\\latex\\preview\\scenes'
     for dirpath,dirnames,filenames in walk(story_folder):
         if dirpath != story_folder:
             continue
         for file in filenames:
-            file=sep.join((story_folder,file))
+            file=story_folder+'\\'+file
             fix_file_quote(file)
 
 if __name__ == '__main__':
