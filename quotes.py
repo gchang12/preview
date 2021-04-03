@@ -20,7 +20,7 @@ def replace_squote(line):
         if len(word) > 2:
             triquotes=tuple(word[:3])
             if triquotes == ('`','`','\''):
-                word='`` `'+word[3:]
+                word='``\\,`'+word[3:]
         new_line.append(word)
     return ' '.join(new_line)
 
