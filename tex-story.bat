@@ -14,3 +14,5 @@ cd %texdir%
 pdflatex preview
 start preview.pdf
 cd ..
+py word_count.py
+echo The word count is: %errorlevel%
