@@ -6,8 +6,8 @@ Extract to some folder
 
 Open Windows command prompt
 
-Switch to root of source: ``cd (source location)''
+Switch to root of source
 
-Run tex-story.bat: ``tex-story.bat''
+Run tex-story.bat
 
-View .pdf file in ./tex folder
+View .pdf file inside ``./tex'' folder
