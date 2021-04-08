@@ -1,5 +1,4 @@
-from os import walk
-from os.path import sep
+from os import walk, sep
 
 def word_count_by_scene(scene_folder):
     count={}
@@ -26,7 +25,5 @@ def word_count_calculator(scene_folder,stop_scene=0):
     return total
 
 if __name__ == '__main__':
-    scene_folder='C:\\Users\\Eclair\\Documents\\projects\\untitled'
-    wc=word_count_calculator(scene_folder,stop_scene=5)
     message='\nThe word count is: %d.'%wc
     print(message)
