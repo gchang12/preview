@@ -1,16 +1,17 @@
 @echo off
-set homedir=%cd%
-set targetdir=C:\Users\Eclair\Documents\projects\latex\preview\scenes
-if not exist %targetdir% md %targetdir%
-set sourcedir=C:\Users\Eclair\Documents\projects\untitled
+set targetdir=..\scenes
+set sourcedir=.\raw
+set texdir=.\tex
+set errmsg=echo Please redownload the raw story files from my GitHub and reinsert them into the root of this directory: https://github.com/gchang12/preview
+if not exist %sourcedir% %errmsg% & exit /b
+if not exist %texdir% %errmsg% & exit /b
 cd %sourcedir%
+if not exist %targetdir% md %targetdir%
 forfiles /p . /c "cmd /c if @isdir == "FALSE" copy @file %targetdir%"
-cd %targetdir%
-py C:\Users\Eclair\Documents\projects\python\overused\quotes.py
 cd ..
+py quotes.py
+cd %texdir%
 pdflatex preview
-set story=C:\Users\Eclair\Documents\projects\latex\preview\preview.pdf
-start %story%
-py C:\Users\Eclair\Documents\projects\python\overused\word_count.py
-if not exist D:\ exit /b
-copy /y %story% D:\NOOK\
+start preview.pdf
+cd ..
+py word_count.py
