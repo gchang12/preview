@@ -3,7 +3,7 @@ from os import walk, sep
 def replace_quote(line):
     k=0
     new_line=''
-    for word in tuple(line):
+    for word in line:
         if word == '\"':
             if not k % 2:
                 word='``'
