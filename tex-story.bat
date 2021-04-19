@@ -13,6 +13,6 @@ py quotes.py
 cd %texdir%
 pdflatex preview
 start preview.pdf
+rd /q /s %targetdir%
 cd ..
 py word_count.py
-rd /q /s %targetdir%
