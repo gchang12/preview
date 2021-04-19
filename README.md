@@ -1,7 +1,7 @@
 HOW TO USE
 ===
-Download source
+Download source then extract
 
-Run tex-story.bat
+Run tex-story.bat in root
 
 View .pdf file inside ``./tex'' folder
