@@ -37,7 +37,6 @@ def replace_ssquote(line):
                         word='`'
                 else:
                     word='`'
-                    print(line)
             k+=1
         new_line+=word
     return new_line
