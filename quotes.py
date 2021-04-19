@@ -31,12 +31,13 @@ def replace_ssquote(line):
     new_line=''
     for n,word in enumerate(line):
         if word == '\'':
-            if not k % 2:
-                if word is not line[0]:
+            if k % 2 == 0:
+                if n > 0:
                     if line[n-1] == ' ':
                         word='`'
                 else:
                     word='`'
+                    print(line)
             k+=1
         new_line+=word
     return new_line
