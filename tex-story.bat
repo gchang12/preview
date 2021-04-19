@@ -2,7 +2,7 @@
 set targetdir=..\scenes
 set sourcedir=.\raw
 set texdir=.\tex
-set errmsg=echo Please redownload the raw story files from my GitHub and reinsert them into the root of this directory: https://github.com/gchang12/preview
+set errmsg=echo Please redownload the raw story documents from: https://github.com/gchang12/preview
 if not exist %sourcedir% %errmsg% & exit /b
 if not exist %texdir% %errmsg% & exit /b
 cd %sourcedir%
