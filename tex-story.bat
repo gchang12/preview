@@ -17,3 +17,4 @@ cd ..
 py word_count.py
 cd %texdir%
 rd /q /s %targetdir%
+cd ..
