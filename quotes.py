@@ -55,7 +55,7 @@ def fix_file_quote(file):
             wfile.write(line)
 
 def fix_prose():
-    story_folder=sep.join(['.','scenes'])
+    story_folder=sep.join(['.','raw'])
     for dirpath,dirnames,filenames in walk(story_folder):
         if dirpath != story_folder:
             continue
