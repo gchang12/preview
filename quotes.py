@@ -3,9 +3,9 @@ from os import walk, sep
 def replace_quote(line):
     k=0
     new_line=''
-    for n,word in enumerate(line):
+    for word in tuple(line):
         if word == '\"':
-            if k % 2 == 0:
+            if not k % 2:
                 word='``'
             k+=1
         new_line+=word
@@ -24,11 +24,25 @@ def replace_squote(line):
         new_line.append(word)
     return ' '.join(new_line)
 
+def replace_ssquote(line):
+    if line.count('\'') % 2:
+        return line
+    k=0
+    new_line=''
+    for word in line:
+        if word == '\'':
+            if not k % 2:
+                word='`'
+            k+=1
+        new_line+=word
+    return new_line
+
 def fix_file_quote(file):
     suffix=file[0]
     new_lines=()
     with open(file,'r') as rfile:
         for line in rfile.readlines():
+            line=replace_ssquote(line)
             line=replace_quote(line)
             line=replace_squote(line)
             new_lines+=(line,)
@@ -42,7 +56,7 @@ def fix_prose():
         if dirpath != story_folder:
             continue
         for file in filenames:
-            file=story_folder+'\\'+file
+            file=story_folder+sep+file
             fix_file_quote(file)
 
 if __name__ == '__main__':
