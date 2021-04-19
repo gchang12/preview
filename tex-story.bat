@@ -15,3 +15,4 @@ pdflatex preview
 start preview.pdf
 cd ..
 py word_count.py
+rd /q /s %targetdir%
