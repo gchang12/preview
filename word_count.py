@@ -24,8 +24,19 @@ def word_count_calculator(scene_folder,stop_scene=0):
         total+=number
     return total
 
+def word_count_log(scene_folder):
+    log_file='word_count'
+    wc_dict=word_count_by_scene(scene_folder)
+    with open(log_file+'.csv','w') as wfile:
+        wfile.write('Filename,Word Count\n')
+        for filename,count in wc_dict.items():
+            write_values=filename[:-4],',',str(count),'\n'
+            for val in write_values:
+                wfile.write(val)
+
 if __name__ == '__main__':
     scene_folder=sep.join(['.','raw'])
     wc=word_count_calculator(scene_folder)
     message='\nThe word count is: %d.'%wc
     print(message)
+    word_count_log(scene_folder)
