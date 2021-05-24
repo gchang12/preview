@@ -7,7 +7,7 @@ if not exist %sourcedir% %errmsg% & exit /b
 if not exist %texdir% %errmsg% & exit /b
 cd %sourcedir%
 if not exist %targetdir% md %targetdir%
-forfiles /p . /c "cmd /c if @isdir == "FALSE" copy @file %targetdir%"
+copy *.txt %targetdir%
 cd ..
 py quotes.py
 cd %texdir%
