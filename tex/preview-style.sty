@@ -1,6 +1,7 @@
 \usepackage[paperwidth=6.125in,paperheight=9.25in,margin=0.5in]{geometry}
 
 \newcommand{\chapterbody}[1]{\input{../scenes/#1.txt}}
+\newcommand{\insertchapter}[2]{\chapter{#1}\chapterbody{#2}}
 
 \usepackage{nopageno,indentfirst}
 \usepackage[numbered]{bookmark}
